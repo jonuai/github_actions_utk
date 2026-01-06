@@ -16,7 +16,7 @@ jobs:
       - name: ascii artwork install cowsay
         run: sudo apt install cowsay -y
       - name: execute cowsay command
-        run: cowsay -f dragon "i am trying to kill you" >> dragon.txt
+        run: cowsay -f dragon "i am trying to kill you, you cannot kill me dragon" >> dragon.txt
       - name: test file exists
         run: grep -i "dragon" dragon.txt
       - name: read file
