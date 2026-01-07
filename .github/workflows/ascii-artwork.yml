@@ -1,22 +1,24 @@
-name: ascii artwork 
+name:  jobs 
 
 on: push
 
 jobs:
-  first_jobs:
+  build_job:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
-        uses: actions/checkout@v6
-      - name: list repo files
-        run : ls -ltra
-      
-      - name: execute shell script
-        run: |
-          
-            chmod +x .github/workflows/asciiscript.sh
-            bash .github/workflows/asciiscript.sh
-     
-
+       - name: building file
+         run: echo "i am utkarsh trying to get job" > job.txt
+  test_job:
+    runs-on: ubuntu-latest
+    steps:
+       - name: testing file
+         run: grep -iw"job" job.txt 
+  deploy_job:
+    runs-on: ubuntu-latest
+    steps:
+       - name: display content
+         run: cat job.txt
+       
+        
             
         
