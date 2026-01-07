@@ -11,11 +11,11 @@ jobs:
       - name: list repo files
         run : ls -ltra
       
-      - name: welcome message and list files
+      - name: execute shell script
         run: |
           
-            chmod +x asciiscript.sh
-            ./asciiscript.sh
+            chmod +x .github/workflows/asciiscript.sh
+            bash .github/workflows/asciiscript.sh
      
 
             
