@@ -9,7 +9,7 @@ jobs:
        - name: building file
          run: |
              touch job.txt
-             echo "i am trying to get my first job in companies." > job.txt
+             echo "i am trying to get my first job in companies." >> job.txt
   test_job:
     needs: [build_job]
     runs-on: ubuntu-latest
