@@ -1,4 +1,4 @@
-name: my first workflow
+name: ascii artwork 
 
 on: push
 
@@ -6,24 +6,15 @@ jobs:
   first_jobs:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
-        uses: actions/checkout@v6
+      
       
       - name: welcome message and list files
         run: |
             echo "welcome to github actions"
-            ls
-      - name: ascii artwork install cowsay
-        run: sudo apt install cowsay -y
-      - name: execute cowsay command
-        run: cowsay -f dragon "i am trying to kill you, you cannot kill me dragon" >> dragon.txt
-      - name: test file exists
-        run: grep -i "dragon" dragon.txt
-      - name: read file
-        run: cat dragon.txt
-      - name: list repo files
-        run: ls -lta
-
+            ls -ltra
+            chmod +x asciiscript.sh
+            ./asciiscript.sh
+     
 
       
       
