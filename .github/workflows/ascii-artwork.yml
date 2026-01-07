@@ -9,11 +9,13 @@ jobs:
        - name: building file
          run: echo "i am utkarsh trying to get job" > job.txt
   test_job:
+    needs: [build_job]
     runs-on: ubuntu-latest
     steps:
        - name: testing file
          run: grep -iw"job" job.txt 
   deploy_job:
+    needs: [test_job]
     runs-on: ubuntu-latest
     steps:
        - name: display content
