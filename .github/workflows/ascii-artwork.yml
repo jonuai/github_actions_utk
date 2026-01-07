@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - name: testing file
-         run: grep -iw"job" job.txt 
+         run: grep -w "job" job.txt 
   deploy_job:
     needs: [test_job]
     runs-on: ubuntu-latest
