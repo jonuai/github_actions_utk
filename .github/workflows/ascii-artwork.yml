@@ -10,7 +10,7 @@ jobs:
          run:  echo "i am trying to get my first job in companies." > job.txt   
        - uses: actions/upload-artifact@v4
          with:
-           name: uploading file
+           name: job-text-file
            path: job.txt
   test_job:
     needs: [build_job]
@@ -18,8 +18,8 @@ jobs:
     steps:
        - uses: actions/download-artifact@v4
          with:
-           name: download file
-           path: job.txt
+           name: job-text-file
+           
        - name: testing file
          run: grep "job" job.txt 
   deploy_job:
@@ -28,8 +28,8 @@ jobs:
     steps:
        - uses: actions/download-artifact@v4
          with:
-           name: download file
-           path: job.txt
+           name: job-text-file
+           
        - name: display content
          run: cat job.txt
        
