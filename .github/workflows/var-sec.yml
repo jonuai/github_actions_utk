@@ -1,6 +1,6 @@
 name: exploring variable and secrets
 on:
-    workflow_dispatch
+    push
 env:
     CONTAINER_REGISTRY: docker.io
     IMAGE_NAME: nginx
@@ -15,6 +15,7 @@ jobs:
      -  name: docker publish
         run: echo docker push $CONTAINER_REGISTRY/${{ vars.DOCKER_USERNAME }}/$IMAGE_NAME:latest
     deploy:
+     timeout-minutes: 1
      needs: docker
      concurrency:
         group: production-deployment
