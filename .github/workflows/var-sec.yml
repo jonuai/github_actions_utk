@@ -1,6 +1,6 @@
 name: exploring variable and secrets
 on:
-    workflow_dispatch:
+    workflow_dispatch
 env:
     CONTAINER_REGISTRY: docker.io
     IMAGE_NAME: nginx
