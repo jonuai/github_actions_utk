@@ -1,4 +1,4 @@
-name: if statement
+name: if statement name is awesome
 on:
     push
 env:
