@@ -15,6 +15,7 @@ jobs:
      -  name: docker publish
         run: echo docker push $CONTAINER_REGISTRY/${{ vars.DOCKER_USERNAME }}/$IMAGE_NAME:latest
     deploy:
+     if: github.ref == 'ref/heads/main'
      timeout-minutes: 1
      needs: docker
      concurrency:
