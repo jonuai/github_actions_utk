@@ -1,4 +1,4 @@
-name: exploring variable and secrets
+name: if statement
 on:
     push
 env:
