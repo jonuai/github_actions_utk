@@ -9,7 +9,7 @@ jobs:
            run: echo "running normal ci"
     pull-request-ci:
          runs-on: ubuntu-latest
-         if: ${{ github.event_name == 'pull_request' }}
+         if: ${{ github.event_name == 'push' }}
          steps:
          - name: Run pr ci
            run: echo "running pr only ci"
