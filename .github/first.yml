@@ -6,6 +6,6 @@ jobs:
        runs_on: ubuntu-latest
        steps:
         - name: welcome message
-          uses: ./.github/workflows/a.yml
+          uses: ./.github/workflows/a.yml@main
         
         
