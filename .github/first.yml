@@ -1,4 +1,4 @@
-name: my first workflow
+name: call resuable workflow
 on: push
 
 jobs:
@@ -6,8 +6,6 @@ jobs:
        runs_on: ubuntu-latest
        steps:
         - name: welcome message
-          run: echo "welcome friends in github actions"
+          uses: ./.github/workflows/a.yml
         
-        - name: list all files
-          run: ls -a
-          
+        

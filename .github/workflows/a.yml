@@ -1,18 +1,12 @@
-name: my first workflow
-
-on: push
+name: resuable-ci 
+on:
+  workflow_call
 
 jobs:
-  first_jobs:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout 
-        uses: actions/checkout@v6
-      
-      - name: welcome message
-        run: echo "welcome to github actions"
-
-      # Step 3: List files in the repository
-      - name: list files
-        run: ls
-        
+      - name: checkout repo
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      - name: print
+        run: echo "i am hacker"

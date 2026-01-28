@@ -1,0 +1,42 @@
+name: utkarsh workflow
+on:
+    pull_request: 
+
+
+jobs:
+    mind:
+     strategy:
+        fail-fast: true
+     runs-on: ubuntu-latest
+     steps:
+        - name: checkout
+          uses: actions/checkout@v6
+
+        - name: print something
+          run: echo hello github actions users.
+    blow:
+     runs-on: ubuntu-latest
+     needs: [mind]
+     steps:
+        - name: multi line 
+          run: echo "hello dosto" > dost.txt
+        - uses: actions/upload-artifact@v4
+          with:
+             name: text file 
+             path: dost.txt
+               
+    ing:
+      needs: [blow]
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/download-artifact@v4
+          with:
+              name: text file
+        - name: display content
+          run: cat dost.txt
+              
+
+
+             
+                 
+
