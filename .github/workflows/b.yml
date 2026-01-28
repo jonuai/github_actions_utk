@@ -1,0 +1,9 @@
+name: call resuable 
+on:
+    push
+jobs:
+    firr:
+      runs-on: ubuntu-latest
+      steps:
+        - name: call
+          uses: ./.github/workflows/a.yml@main

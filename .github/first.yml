@@ -1,11 +1,3 @@
-name: call resuable workflow
-on: push
 
-jobs:
- first:
-       runs_on: ubuntu-latest
-       steps:
-        - name: welcome message
-          uses: ./.github/workflows/a.yml@main
         
         
