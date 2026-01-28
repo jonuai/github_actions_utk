@@ -2,7 +2,7 @@ name: call resuable workflow
 on: push
 
 jobs:
- first_job:
+ first:
        runs_on: ubuntu-latest
        steps:
         - name: welcome message
