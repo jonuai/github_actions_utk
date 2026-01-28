@@ -6,4 +6,4 @@ jobs:
      runs-on: ubuntu-latest
      steps:
         - name: run 
-          uses: ./ .github/actions/python-test-action@main
+          uses: ./.github/actions/python-test-action@main
