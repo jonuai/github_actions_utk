@@ -1,17 +1,19 @@
 name: "Node Build"
-description: "Install, test, and build Node app"
+description: "Setup node and install deps"
+
+inputs:
+  node-version:
+    description: "node version"
+    required: true
 
 runs:
   using: "composite"
   steps:
-    - name: Install deps
+    - name: Setup Node
+      uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    - name: Install dependencies
       run: npm install
-      shell: bash
-
-    - name: Run tests
-      run: npm test
-      shell: bash
-
-    - name: Build app
-      run: npm run build
       shell: bash
