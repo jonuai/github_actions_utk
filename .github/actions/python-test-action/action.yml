@@ -1,0 +1,9 @@
+name: python test action
+description:  Runs Python unit tests
+runs:
+   using: "composite"
+   steps:
+      - name: checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
+      - name: print
+        uses: echo "i am hacker"
