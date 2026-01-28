@@ -1,9 +1,17 @@
-name: python test action
-description:  Runs Python unit tests
+name: "Node Build"
+description: "Install, test, and build Node app"
+
 runs:
-   using: "composite"
-   steps:
-      - name: checkout
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
-      - name: print
-        uses: echo "i am hacker"
+  using: "composite"
+  steps:
+    - name: Install deps
+      run: npm install
+      shell: bash
+
+    - name: Run tests
+      run: npm test
+      shell: bash
+
+    - name: Build app
+      run: npm run build
+      shell: bash

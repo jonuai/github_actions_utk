@@ -1,9 +1,9 @@
 name: call composite action
 on:
-    push
+  [push]
 jobs:
- calling:
+ build:
      runs-on: ubuntu-latest
      steps:
-        - name: run 
-          uses: ./.github/actions/python-test-action@main
+        - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
+        - uses: ./.github/actions/python-test-action
